@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { HelloService } from '../hello.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { HelloService } from '../hello.service';
   styleUrl: './hello.component.css',
 })
 export class HelloComponent implements OnInit {
-  message: string = '';
+  message = '';
 
   constructor(private helloService: HelloService) {}
 

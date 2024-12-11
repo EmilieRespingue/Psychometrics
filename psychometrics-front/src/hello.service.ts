@@ -12,7 +12,7 @@ export class HelloService {
 
   constructor(private http: HttpClient) {}
 
-  getMessage(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/message`);
+  getMessage(): Observable<Hello> {
+    return this.http.get<Hello>(`${this.apiUrl}/message`);
   }
 }
