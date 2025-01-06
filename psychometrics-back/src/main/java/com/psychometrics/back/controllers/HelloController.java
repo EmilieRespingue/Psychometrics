@@ -12,16 +12,18 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:4200")
 public class HelloController {
 
-    @GetMapping("/")
-    public String sayHello() {
-        return "Coucou Darwi !";
+    @GetMapping("/coucou")
+    public ResponseEntity<Map<String, String>> sayHello() {
+        Map<String, String> message = new HashMap<>();
+        message.put("content", "Coucou Darwi !");
+        return ResponseEntity.ok(message);
     }
 
     // Exemple d'un endpoint JSON
     @GetMapping("/message")
     public ResponseEntity<Map<String, String>> getMessage() {
         Map<String, String> message = new HashMap<>();
-        message.put("content", "Bonjour depuis Spring Boot!");
+        message.put("content", "Coucou Garga !");
         return ResponseEntity.ok(message);
     }
 }
