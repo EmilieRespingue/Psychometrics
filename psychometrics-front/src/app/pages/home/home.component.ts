@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { FooterComponent } from '../../components/footer/footer.component';
 
-interface Domain {
+interface TestCard {
   id: number;
   name: string;
 }
@@ -34,15 +34,15 @@ interface Domain {
         </mat-card-content>
       </mat-card>
 
-      <!-- Domains Grid -->
-      <div class="domains-grid">
-        @for (domain of domains; track domain.id) {
-        <mat-card class="domain-card mat-elevation-z2">
+      <!-- testCards Grid -->
+      <div class="testCards-grid">
+        @for (testCard of testCards; track testCard.id) {
+        <mat-card class="testCard-card mat-elevation-z2">
           <mat-card-header>
-            <mat-card-title class="domain-title">DOMAINE</mat-card-title>
+            <mat-card-title class="testCard-title">DOMAINE</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p class="domain-content">{{ domain.name }}</p>
+            <p class="testCard-content">{{ testCard.name }}</p>
           </mat-card-content>
         </mat-card>
         }
@@ -55,7 +55,7 @@ interface Domain {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  domains: Domain[] = [
+  testCards: TestCard[] = [
     { id: 1, name: 'Nom du test / outil' },
     { id: 2, name: 'Nom du test / outil' },
     { id: 3, name: 'Nom du test / outil' },

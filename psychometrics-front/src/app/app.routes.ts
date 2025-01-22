@@ -4,8 +4,17 @@ import { HomeComponent } from './pages/home/home.component';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'fr',
     pathMatch: 'full',
-    component: HomeComponent,
-    title: 'Psychometrics - Accueil',
+  },
+  {
+    path: ':lang',
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+        title: 'Psychometrics - Home',
+      },
+    ],
   },
 ];
