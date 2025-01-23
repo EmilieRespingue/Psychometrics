@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TranslocoModule } from '@ngneat/transloco';
 
 import { FooterComponent } from '../../components/footer/footer.component';
 
@@ -21,16 +22,14 @@ interface Domain {
     MatCardModule,
     MatToolbarModule,
     FooterComponent,
+	TranslocoModule,
   ],
   template: `
     <main class="main-content">
       <!-- Description Section -->
       <mat-card class="description-card mat-elevation-z2">
         <mat-card-content>
-          Lorem ipsum dolor sit amet consectetur. Amet dictum sed augue velit
-          sem. Id in varius duis vivamus sit eras. Id nullam malesuada sapien
-          nisi elit ut dignissim enim. Condimentum eleifend ultricies duis
-          cursus quisque enim lacus.
+          {{ 'yeah' | transloco }}
         </mat-card-content>
       </mat-card>
 
