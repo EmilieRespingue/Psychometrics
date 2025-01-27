@@ -1,4 +1,4 @@
-package com.psychometrics.psychometrics_back;
+package com.psychometrics.back;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
