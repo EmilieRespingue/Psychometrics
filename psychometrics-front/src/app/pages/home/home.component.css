@@ -11,30 +11,30 @@
   background-color: white;
 }
 
-.domains-grid {
+.testCards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
   padding: 20px 0;
 }
 
-.domain-card {
+.testCard-card {
   height: 100%;
   transition: transform 0.2s ease-in-out;
   background-color: white;
 }
 
-.domain-card:hover {
+.testCard-card:hover {
   transform: translateY(-2px);
 }
 
-.domain-title {
+.testCard-title {
   color: #1976d2;
   font-size: 1.1rem;
   font-weight: 500;
 }
 
-.domain-content {
+.testCard-content {
   color: rgba(0, 0, 0, 0.7);
   margin: 16px 0;
 }
