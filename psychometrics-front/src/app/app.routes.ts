@@ -3,9 +3,19 @@ import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   {
+    path: ':lang',
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+        title: 'Psychometrics',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
     path: '',
-    component: HomeComponent,
-    title: 'Psychometrics - Accueil',
+    redirectTo: '/fr',
     pathMatch: 'full',
   },
 ];
