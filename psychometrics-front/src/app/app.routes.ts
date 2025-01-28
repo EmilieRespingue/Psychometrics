@@ -1,21 +1,25 @@
+// src/app/app.routes.ts
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
+  // Default redirect to Home
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+
+  // Language-specific routes
   {
     path: ':lang',
     children: [
+      // Home route (default)
       {
         path: '',
-        component: HomeComponent,
-        title: 'Psychometrics',
+        loadChildren: () =>
+          import('./pages/home/home.route').then((m) => m.HOME_ROUTES), // lazy loading
         pathMatch: 'full',
       },
     ],
-  },
-  {
-    path: '',
-    redirectTo: '/fr',
-    pathMatch: 'full',
   },
 ];

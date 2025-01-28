@@ -27,7 +27,9 @@ import { HeaderComponent } from '../../components/header/header.component';
       <main class="main-content">
         <!-- Description Section -->
         <mat-card class="description-card mat-elevation-z2">
-          <mat-card-content>{{ 'description' | transloco }}</mat-card-content>
+          <mat-card-content>{{
+            'home.description' | transloco
+          }}</mat-card-content>
         </mat-card>
 
         <!-- testCards Grid -->
@@ -36,12 +38,12 @@ import { HeaderComponent } from '../../components/header/header.component';
           <mat-card class="testCard-card mat-elevation-z2">
             <mat-card-header>
               <mat-card-title class="testCard-title">{{
-                'testCard.title' | transloco
+                'home.testCard.title' | transloco
               }}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <p class="testCard-content">
-                {{ 'testCard.testName' | transloco }}
+                {{ 'home.testCard.testName' | transloco }}
               </p>
             </mat-card-content>
           </mat-card>
