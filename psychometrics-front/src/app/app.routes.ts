@@ -1,25 +1,16 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  // Default redirect to Home
+  // Redirection racine vers home
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
-
-  // Language-specific routes
+  // Route home avec lazy loading
   {
-    path: ':lang',
-    children: [
-      // Home route (default)
-      {
-        path: '',
-        loadChildren: () =>
-          import('./pages/home/home.route').then((m) => m.HOME_ROUTES), // lazy loading
-        pathMatch: 'full',
-      },
-    ],
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.route').then((m) => m.HOME_ROUTES),
   },
 ];
