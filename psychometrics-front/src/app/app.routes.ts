@@ -1,21 +1,16 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-  {
-    path: ':lang',
-    children: [
-      {
-        path: '',
-        component: HomeComponent,
-        title: 'Psychometrics',
-        pathMatch: 'full',
-      },
-    ],
-  },
+  // Redirection racine vers home
   {
     path: '',
-    redirectTo: '/fr',
+    redirectTo: 'home',
     pathMatch: 'full',
+  },
+  // Route home avec lazy loading
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.route').then((m) => m.HOME_ROUTES),
   },
 ];
