@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+import { HeaderComponent } from './components/header/header.component';
 import { HelloComponent } from '../components/hello/hello.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HelloComponent, RouterModule],
+  imports: [HeaderComponent, HelloComponent, RouterModule],
   template: `
+    <app-header />
     <div>
       <h1>Psychometrics</h1>
       <router-outlet></router-outlet>

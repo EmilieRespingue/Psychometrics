@@ -8,7 +8,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslocoModule } from '@jsverse/transloco';
 
 import { FooterComponent } from '../../components/footer/footer.component';
-import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -19,12 +18,10 @@ import { HeaderComponent } from '../../components/header/header.component';
     MatCardModule,
     MatToolbarModule,
     FooterComponent,
-    HeaderComponent,
     TranslocoModule,
   ],
   template: `
     <div class="container">
-      <app-header />
       <main class="main-content">
         <!-- Description Section -->
         <mat-card class="description-card mat-elevation-z2">
