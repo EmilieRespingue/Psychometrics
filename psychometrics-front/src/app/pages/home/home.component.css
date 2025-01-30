@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .description-card {
   margin-bottom: 32px;
   background-color: white;

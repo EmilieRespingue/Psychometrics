@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -35,7 +36,11 @@ import { HeaderComponent } from '../../components/header/header.component';
         <!-- testCards Grid -->
         <div class="testCards-grid">
           @for (testCard of testCards; track testCard.id) {
-          <mat-card class="testCard-card mat-elevation-z2">
+          <mat-card
+            class="testCard-card mat-elevation-z2"
+            [class.clickable]="testCard.id === 1"
+            (click)="testCard.id === 1 && navigateToInfo()"
+          >
             <mat-card-header>
               <mat-card-title class="testCard-title">{{
                 'home.testCard.title' | transloco
@@ -58,7 +63,13 @@ import { HeaderComponent } from '../../components/header/header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
+  private router = inject(Router);
+
   testCards = Array(6)
     .fill(null)
     .map((_, i) => ({ id: i + 1 }));
+
+  navigateToInfo() {
+    this.router.navigate(['info']);
+  }
 }
