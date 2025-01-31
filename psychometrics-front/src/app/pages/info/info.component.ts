@@ -33,68 +33,105 @@ import { TranslocoModule } from '@jsverse/transloco';
 
         <mat-card-content>
           <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-            <div class="radio-section">
-              <mat-label class="radio-label required">
+            <!-- Genre -->
+            <section class="form-section">
+              <h2 class="question-title required">
                 {{ 'info.gender.question' | transloco }}
-              </mat-label>
+              </h2>
+              <div class="radio-section">
+                <mat-radio-group
+                  formControlName="gender"
+                  class="radio-group"
+                  aria-label="Genre"
+                >
+                  <mat-radio-button value="option1">
+                    {{ 'info.gender.male' | transloco }}
+                  </mat-radio-button>
+                  <mat-radio-button value="option2">
+                    {{ 'info.gender.female' | transloco }}
+                  </mat-radio-button>
+                  <mat-radio-button value="option3">
+                    {{ 'info.gender.other' | transloco }}
+                  </mat-radio-button>
+                </mat-radio-group>
+                @if (userForm.get('gender')?.touched &&
+                userForm.get('gender')?.hasError('required')) {
+                <mat-error>{{
+                  'info.formField.required' | transloco
+                }}</mat-error>
+                }
+              </div>
+            </section>
 
-              <mat-radio-group formControlName="gender" class="radio-group">
-                <mat-radio-button value="option1">{{
-                  'info.gender.male' | transloco
-                }}</mat-radio-button>
-                <mat-radio-button value="option2">{{
-                  'info.gender.female' | transloco
-                }}</mat-radio-button>
-                <mat-radio-button value="option3">{{
-                  'info.gender.other' | transloco
-                }}</mat-radio-button>
-              </mat-radio-group>
+            <!-- Prénom -->
+            <section class="form-section">
+              <h2 class="question-title">
+                {{ 'info.formField.firstNameQuestion' | transloco }}
+              </h2>
+              <mat-form-field appearance="outline">
+                <mat-label>{{
+                  'info.formField.firstName' | transloco
+                }}</mat-label>
+                <input
+                  matInput
+                  formControlName="firstName"
+                  required
+                  [attr.aria-label]="'info.formField.firstName' | transloco"
+                />
+              </mat-form-field>
+            </section>
 
-              @if (userForm.get('gender')?.touched &&
-              userForm.get('gender')?.hasError('required')) {
-              <mat-error>{{ 'info.formField.required' | transloco }}</mat-error>
-              }
-            </div>
+            <!-- Âge -->
+            <section class="form-section">
+              <h2 class="question-title">
+                {{ 'info.formField.ageQuestion' | transloco }}
+              </h2>
+              <mat-form-field appearance="outline">
+                <mat-label>{{ 'info.formField.age' | transloco }}</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="age"
+                  required
+                  min="8"
+                  max="99"
+                  [attr.aria-label]="'info.formField.age' | transloco"
+                />
+                @if (userForm.get('age')?.hasError('required') &&
+                userForm.get('age')?.touched) {
+                <mat-error>{{
+                  'info.formField.ageRequired' | transloco
+                }}</mat-error>
+                } @if (userForm.get('age')?.hasError('min') ||
+                userForm.get('age')?.hasError('max')) {
+                <mat-error>{{
+                  'info.formField.ageInvalid' | transloco
+                }}</mat-error>
+                }
+              </mat-form-field>
+            </section>
 
-            <mat-form-field appearance="outline">
-              <mat-label>{{
-                'info.formField.firstName' | transloco
-              }}</mat-label>
-              <input matInput formControlName="firstName" required />
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>{{ 'info.formField.age' | transloco }}</mat-label>
-              <input
-                matInput
-                type="number"
-                formControlName="age"
-                required
-                min="8"
-                max="99"
-              />
-              @if (userForm.get('age')?.hasError('required') &&
-              userForm.get('age')?.touched) {
-              <mat-error>{{
-                'info.formField.ageRequired' | transloco
-              }}</mat-error>
-              } @if (userForm.get('age')?.hasError('min') ||
-              userForm.get('age')?.hasError('max')) {
-              <mat-error>{{
-                'info.formField.ageInvalid' | transloco
-              }}</mat-error>
-              }
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>{{ 'info.formField.email' | transloco }}</mat-label>
-              <input matInput formControlName="email" type="email" required />
-              @if (userForm.get('email')?.hasError('email')) {
-              <mat-error>
-                {{ 'info.formField.emailInvalid' | transloco }}
-              </mat-error>
-              }
-            </mat-form-field>
+            <!-- Email -->
+            <section class="form-section">
+              <h2 class="question-title">
+                {{ 'info.formField.emailQuestion' | transloco }}
+              </h2>
+              <mat-form-field appearance="outline">
+                <mat-label>{{ 'info.formField.email' | transloco }}</mat-label>
+                <input
+                  matInput
+                  type="email"
+                  formControlName="email"
+                  required
+                  [attr.aria-label]="'info.formField.email' | transloco"
+                />
+                @if (userForm.get('email')?.hasError('email')) {
+                <mat-error>{{
+                  'info.formField.emailInvalid' | transloco
+                }}</mat-error>
+                }
+              </mat-form-field>
+            </section>
 
             <button
               mat-raised-button

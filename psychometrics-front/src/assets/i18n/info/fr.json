@@ -1,11 +1,14 @@
 {
   "info": "OUI",
   "formField": {
+    "ageQuestion": "Quel âge avez-vous (en années) ?",
     "age": "Âge",
     "ageRequired": "L'âge est requis",
     "ageInvalid": "L'âge doit être compris entre 8 et 99 ans",
+    "firstNameQuestion": "Quel est votre prénom ?",
     "firstName": "Prénom",
     "lastName": "Nom",
+    "emailQuestion": "Quelle est votre adresse email ?",
     "email": "Email",
     "password": "Mot de passe",
     "button": "Envoyer"

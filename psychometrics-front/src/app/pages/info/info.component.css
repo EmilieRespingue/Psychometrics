@@ -1,58 +1,33 @@
+/* Styles de section et conteneur */
+.form-section {
+  margin-bottom: 32px;
+}
+
+/* Conteneur principal */
 .info-container {
-  padding: 20px;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 600px; /* Limite la largeur */
+  margin: 0 auto; /* Centre le conteneur */
+  padding: 20px; /* Espace autour du contenu */
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/* Style de carte */
+mat-card {
+  width: 100%; /* Prend la largeur du conteneur */
+  margin-bottom: 20px;
 }
 
-mat-form-field {
-  width: 100%;
-}
-
-.radio-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 24px 0;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-}
-
-.radio-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 32px;
-  margin: 16px 0;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 600px;
-}
-
-.radio-label {
-  position: relative;
-  display: inline-block;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+/* Styles de question */
+.question-title {
+  font-size: 18px;
   font-weight: 500;
-  margin-bottom: 16px;
   color: #1976d2;
-  text-align: center;
-  letter-spacing: 0.15px;
+  margin-bottom: 16px;
   line-height: 1.5;
-  width: 100%; /* Ensures label takes full width above options */
   position: relative;
-  padding-bottom: 8px;
 }
 
 /* Ligne décorative sous la question */
-.radio-label::after {
+.question-title::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -64,7 +39,36 @@ mat-form-field {
   border-radius: 2px;
 }
 
-/* Style pour l'astérisque */
+/* Section radio */
+.radio-section {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+mat-radio-button {
+  margin: 8px 0;
+}
+
+/* Champs de formulaire */
+mat-form-field {
+  width: 100%;
+}
+
+/* Styles d'erreur */
+mat-error {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Style pour l'astérisque requis */
 .required::before {
   content: " *";
   color: #f44336;
@@ -74,7 +78,9 @@ mat-form-field {
   display: inline;
 }
 
-mat-error {
-  font-size: 12px;
-  margin-top: 4px;
+/* Bouton de soumission */
+button[type="submit"] {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
 }
