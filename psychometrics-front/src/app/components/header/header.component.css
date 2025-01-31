@@ -12,6 +12,12 @@
   gap: 1rem;
 }
 
+/* Style for language buttons container */
+.lang-buttons {
+  display: flex;
+  gap: 8px; /* Space between FR and EN buttons */
+}
+
 .lang-btn {
   padding: 0.5rem 1rem;
   border: none;
@@ -24,4 +30,21 @@
 
 .lang-btn:hover {
   background-color: #0056b3;
+}
+
+.login-btn mat-icon {
+  font-size: 32px; /* Increased from 28px */
+  height: 32px; /* Match font-size */
+  width: 32px; /* Match font-size */
+  color: #1976d2;
+  display: block;
+  margin-bottom: 6px; /* Adjusted spacing for larger icon */
+}
+
+.login-text {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  margin-top: 4px;
 }
