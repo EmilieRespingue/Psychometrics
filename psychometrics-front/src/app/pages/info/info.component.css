@@ -1,0 +1,80 @@
+.info-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.radio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 600px;
+}
+
+.radio-label {
+  position: relative;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #1976d2;
+  text-align: center;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+  width: 100%; /* Ensures label takes full width above options */
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Ligne décorative sous la question */
+.radio-label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: #1976d2;
+  border-radius: 2px;
+}
+
+/* Style pour l'astérisque */
+.required::before {
+  content: " *";
+  color: #f44336;
+  font-size: 14px;
+  vertical-align: top;
+  margin-left: 4px;
+  display: inline;
+}
+
+mat-error {
+  font-size: 12px;
+  margin-top: 4px;
+}

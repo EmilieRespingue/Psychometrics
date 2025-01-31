@@ -1,3 +1,19 @@
 {
-  "info": "OUI"
+  "info": "OUI",
+  "formField": {
+    "age": "Âge",
+    "ageRequired": "L'âge est requis",
+    "ageInvalid": "L'âge doit être compris entre 8 et 99 ans",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "password": "Mot de passe",
+    "button": "Envoyer"
+  },
+  "gender": {
+    "question": "Quel est votre genre ?",
+    "male": "Homme",
+    "female": "Femme",
+    "other": "Autre"
+  }
 }
