@@ -1,0 +1,86 @@
+/* Styles de section et conteneur */
+.form-section {
+  margin-bottom: 32px;
+}
+
+/* Conteneur principal */
+.info-container {
+  max-width: 600px; /* Limite la largeur */
+  margin: 0 auto; /* Centre le conteneur */
+  padding: 20px; /* Espace autour du contenu */
+}
+
+/* Style de carte */
+mat-card {
+  width: 100%; /* Prend la largeur du conteneur */
+  margin-bottom: 20px;
+}
+
+/* Styles de question */
+.question-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1976d2;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Ligne décorative sous la question */
+.question-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: #1976d2;
+  border-radius: 2px;
+}
+
+/* Section radio */
+.radio-section {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+mat-radio-button {
+  margin: 8px 0;
+}
+
+/* Champs de formulaire */
+mat-form-field {
+  width: 100%;
+}
+
+/* Styles d'erreur */
+mat-error {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Style pour l'astérisque requis */
+.required::before {
+  content: " *";
+  color: #f44336;
+  font-size: 14px;
+  vertical-align: top;
+  margin-left: 4px;
+  display: inline;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+}

@@ -1,0 +1,22 @@
+{
+  "info": "YES",
+  "formField": {
+    "ageQuestion": "How old are you (years) ?",
+    "age": "Age",
+    "ageRequired": "Age is required",
+    "ageInvalid": "Age must be between 8 and 99 years old",
+    "firstNameQuestion": "What is your first name ?",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "emailQuestion": "What is your email adress ?",
+    "email": "Email",
+    "password": "Password",
+    "button": "Submit"
+  },
+  "gender": {
+    "question": "What is your gender ?",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other"
+  }
+}
