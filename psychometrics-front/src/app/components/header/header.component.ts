@@ -20,6 +20,11 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
   template: `
     <header class="header">
       <nav class="nav">
+        <!-- Site Title -->
+        <div class="app-title">
+          <h1>Psychometrics</h1>
+        </div>
+        <!-- Language Menu -->
         <button
           mat-button
           [matMenuTriggerFor]="languageMenu"
@@ -37,6 +42,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
           </button>
         </mat-menu>
 
+        <!-- Login Button -->
         <button mat-button class="login-btn" (click)="navigateToLogin()">
           <mat-icon>person</mat-icon>
           <span class="login-text">Se connecter /<br />S'inscrire</span>
