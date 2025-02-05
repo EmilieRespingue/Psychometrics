@@ -6,22 +6,55 @@
 
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   gap: 1rem;
 }
 
-.lang-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+.app-title {
+  display: flex;
+  justify-content: center;
+  flex: 1;
 }
 
-.lang-btn:hover {
-  background-color: #0056b3;
+.app-title h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #1976d2;
+  margin: 0;
+}
+
+/* Style for language menu */
+
+.lang-select-btn {
+  min-width: 80px;
+  padding: 0 16px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 4px;
+  color: #1976d2;
+}
+
+.lang-label {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.login-btn mat-icon {
+  font-size: 32px; /* Increased from 28px */
+  height: 32px; /* Match font-size */
+  width: 32px; /* Match font-size */
+  color: #1976d2;
+  display: block;
+  margin-bottom: 6px; /* Adjusted spacing for larger icon */
+}
+
+.login-text {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  margin-top: 4px;
 }

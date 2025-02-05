@@ -12,7 +12,6 @@ import { HelloComponent } from '../components/hello/hello.component';
   template: `
     <app-header />
     <div>
-      <h1>Psychometrics</h1>
       <router-outlet></router-outlet>
       <section>
         <app-hello></app-hello>
