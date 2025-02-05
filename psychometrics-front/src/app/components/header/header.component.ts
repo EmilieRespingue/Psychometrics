@@ -1,20 +1,41 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
-import { TranslocoService } from '@jsverse/transloco';
+
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    TranslocoModule,
+  ],
   template: `
     <header class="header">
       <nav class="nav">
-        <div class="lang-buttons">
-          <button class="lang-btn" (click)="switchLang('fr')">FR</button>
-          <button class="lang-btn" (click)="switchLang('en')">EN</button>
-        </div>
+        <button
+          mat-button
+          [matMenuTriggerFor]="languageMenu"
+          class="lang-select-btn"
+        >
+          <span class="lang-label">{{ currentLang | uppercase }}</span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #languageMenu="matMenu">
+          <button mat-menu-item (click)="switchLang('fr')">
+            <span>Français</span>
+          </button>
+          <button mat-menu-item (click)="switchLang('en')">
+            <span>Anglais</span>
+          </button>
+        </mat-menu>
 
         <button mat-button class="login-btn" (click)="navigateToLogin()">
           <mat-icon>person</mat-icon>
@@ -30,7 +51,10 @@ export class HeaderComponent {
   private translocoService = inject(TranslocoService);
   private router = inject(Router);
 
+  currentLang = 'fr';
+
   switchLang(lang: 'fr' | 'en') {
+    this.currentLang = lang;
     this.translocoService.setActiveLang(lang);
   }
 

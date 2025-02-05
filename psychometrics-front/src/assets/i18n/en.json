@@ -3,5 +3,9 @@
   "testCard": {
     "title": "DOMAIN",
     "testName": "pouet en anglais pouet"
+  },
+  "language": {
+    "english": "English",
+    "french": "French"
   }
 }
