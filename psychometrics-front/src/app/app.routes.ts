@@ -19,4 +19,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/info/info.route').then((m) => m.INFO_ROUTES),
   },
+  // Route vers la page de test
+  {
+    path: 'test',
+    loadChildren: () =>
+      import('./pages/test-page/test.route').then((m) => m.TEST_ROUTES),
+  },
 ];

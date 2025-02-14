@@ -5,5 +5,10 @@
   "language": {
     "english": "English",
     "french": "French"
+  },
+  "formulaire": {
+    "erreurs": {
+      "requis": "Une réponse est requise"
+    }
   }
 }

@@ -1,0 +1,15 @@
+.question-container {
+  margin: 1rem 0;
+}
+.question-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.answer-field {
+  width: 100%;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
