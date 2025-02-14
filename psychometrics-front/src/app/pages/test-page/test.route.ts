@@ -8,7 +8,7 @@ export const TEST_ROUTES: Routes = [
     component: TestComponent,
     providers: [
       provideTranslocoScope({
-        scope: 'test',
+        scope: 'testPage',
         loader: {
           fr: () =>
             import('../../../assets/i18n/testPage/fr.json').then(

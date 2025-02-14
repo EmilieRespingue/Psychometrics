@@ -1,5 +1,22 @@
 @use '@angular/material' as mat;
 
+// Configuration de la typographie
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Roboto, sans-serif',
+  $headline-1: mat.define-typography-level(96px, 96px, 300),
+  $headline-2: mat.define-typography-level(60px, 60px, 300),
+  $headline-3: mat.define-typography-level(48px, 48px, 400),
+  $headline-4: mat.define-typography-level(34px, 40px, 400),
+  $headline-5: mat.define-typography-level(24px, 32px, 400),
+  $headline-6: mat.define-typography-level(20px, 32px, 500),
+  $body-1: mat.define-typography-level(16px, 24px, 400),
+  $body-2: mat.define-typography-level(14px, 20px, 400),
+  $subtitle-1: mat.define-typography-level(16px, 28px, 400),
+  $subtitle-2: mat.define-typography-level(14px, 22px, 500),
+  $button: mat.define-typography-level(14px, 14px, 500),
+  $caption: mat.define-typography-level(12px, 20px, 400)
+);
+
 // Palette de couleurs personnalisée
 $primary-palette: (
   50: #e3f2fd,
@@ -63,7 +80,7 @@ $theme: mat.define-light-theme((
     accent: $accent,
     warn: $warn
   ),
-  typography: mat.define-typography-config(),
+  typography: $custom-typography,
   density: 0
 ));
 

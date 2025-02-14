@@ -1,20 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* body {
-  font-family: "Garamond", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-:root {
-  --primary: #605dc8;
-  --secondary: #8b89e6;
-  --accent-color: #e8e7fa;
-  --shadow-color: #e8e8e8;
-}
-
-button.primary {
-  background-color: var(--primary);
-  border: solid 1px var(--primary);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background: var(--primary);
-  color: white;
-} */

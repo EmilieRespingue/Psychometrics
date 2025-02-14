@@ -3,3 +3,17 @@
   margin: 2rem auto;
   padding: 0 1rem;
 }
+
+.question-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}

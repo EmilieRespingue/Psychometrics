@@ -1,0 +1,18 @@
+.question-container {
+  margin: 1rem 0;
+}
+
+.radio-group {
+  margin: 1rem 0;
+}
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+mat-error {
+  color: var(--mat-warn-color);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}

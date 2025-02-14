@@ -13,66 +13,63 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
 import { TranslocoModule } from '@jsverse/transloco';
 
 import { TestContent } from '../../../models/test-content';
 
 @Component({
-  selector: 'app-open-ended',
+  selector: 'app-closed-ended',
   standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatButtonModule,
+    TranslocoModule,
     MatFormFieldModule,
     MatInputModule,
+    MatRadioModule,
     TranslocoModule,
   ],
   template: `
-    <!-- Conteneur principal -->
     <div class="question-container">
       <p class="question-text">{{ currentQuestion.textFr }}</p>
 
       <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="answer-field">
-          <textarea
-            matInput
-            formControlName="answer"
-            rows="4"
-            placeholder="Votre réponse..."
-            required
-          ></textarea>
+        <div class="radio-group">
+          <mat-radio-group formControlName="answer" class="answer-options">
+            <mat-radio-button value="true">Oui</mat-radio-button>
+            <mat-radio-button value="false">Non</mat-radio-button>
+          </mat-radio-group>
 
-          <!-- Message d'erreur conditionnel -->
           @if (answerForm.get('answer')?.hasError('required') &&
           answerForm.get('answer')?.touched) {
           <mat-error>Une réponse est requise</mat-error>
           }
-        </mat-form-field>
+        </div>
       </form>
     </div>
   `,
-  styleUrl: './open-ended.component.css',
+  styleUrl: './closed-ended.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class OpenEndedQuestionComponent {
+export class ClosedEndedComponent {
   @Input({ required: true }) currentQuestion!: TestContent;
-  @Output() answered = new EventEmitter<string>();
+  @Output() answered = new EventEmitter<boolean>();
 
   answerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.answerForm = this.fb.group({
-      answer: ['', Validators.required], //validation à la création
+      answer: ['', Validators.required],
     });
   }
 
   onSubmit() {
     if (this.answerForm.valid) {
-      this.answered.emit(this.answerForm.value.answer);
+      this.answered.emit(this.answerForm.value.answer === 'true');
       this.answerForm.reset();
     }
   }
