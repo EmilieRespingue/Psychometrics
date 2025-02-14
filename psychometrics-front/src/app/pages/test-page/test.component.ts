@@ -64,15 +64,15 @@ export class TestComponent {
   }
 
   onAnsweredOpen(answer: string): void {
-    this.openAnswer = answer;
     console.log('Réponse à la question ouverte :', answer);
+    this.openAnswer = answer;
     //logique à ajouter :
     //sauvegarder la réponse
   }
 
   onAnsweredClosed(answer: boolean): void {
-    this.closedAnswer = answer;
     console.log('Réponse à la question fermée :', answer);
+    this.closedAnswer = answer;
   }
 
   onNext(): void {

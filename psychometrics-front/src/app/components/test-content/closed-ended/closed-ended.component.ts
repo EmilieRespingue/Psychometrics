@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { TranslocoModule } from '@jsverse/transloco';
+import { Subscription } from 'rxjs';
 
 import { TestContent } from '../../../models/test-content';
 
@@ -60,6 +61,7 @@ export class ClosedEndedComponent {
   @Output() answered = new EventEmitter<boolean>();
 
   answerForm: FormGroup;
+  private valueSubscription?: Subscription;
 
   constructor(private fb: FormBuilder) {
     this.answerForm = this.fb.group({
@@ -67,10 +69,24 @@ export class ClosedEndedComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.valueSubscription = this.answerForm
+      .get('answer')
+      ?.valueChanges.subscribe((value) => {
+        if (value !== null) {
+          this.answered.emit(value === 'true');
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.valueSubscription?.unsubscribe();
+  }
+
   onSubmit() {
     if (this.answerForm.valid) {
       this.answered.emit(this.answerForm.value.answer === 'true');
-      this.answerForm.reset();
+      //this.answerForm.reset();
     }
   }
 }

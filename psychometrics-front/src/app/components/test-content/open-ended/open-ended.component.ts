@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslocoModule } from '@jsverse/transloco';
+import { Subscription } from 'rxjs';
 
 import { TestContent } from '../../../models/test-content';
 
@@ -63,6 +64,7 @@ export class OpenEndedQuestionComponent {
   @Output() answered = new EventEmitter<string>();
 
   answerForm: FormGroup;
+  private valueSubscription?: Subscription;
 
   constructor(private fb: FormBuilder) {
     this.answerForm = this.fb.group({
@@ -70,10 +72,24 @@ export class OpenEndedQuestionComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.valueSubscription = this.answerForm
+      .get('answer')
+      ?.valueChanges.subscribe((value) => {
+        if (value) {
+          this.answered.emit(value);
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.valueSubscription?.unsubscribe();
+  }
+
   onSubmit() {
     if (this.answerForm.valid) {
       this.answered.emit(this.answerForm.value.answer);
-      this.answerForm.reset();
+      //this.answerForm.reset();
     }
   }
 }
